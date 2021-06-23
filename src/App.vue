@@ -1,8 +1,12 @@
 <template>
   <div id="app">
-    <Header />
+    <Header 
+    :links="headerlinks"
+    />
     <Main />
-    <Footer />
+    <Footer 
+    :socials="socialLinks"
+    />
   </div>
 </template>
 
@@ -16,17 +20,57 @@ export default {
         Header,
         Main,
         Footer
-  }
+  },
+  data() {
+    return {
+      headerlinks:[{
+        title:"treatments", 
+        icon:"fab fa-pagelines",
+        subtitle:"Face & Body",
+        },
+        {
+        title:"about", 
+        icon:"fas fa-male",
+        subtitle:"Our Team",
+        },
+        {
+        title:"journal", 
+        icon:"fas fa-heart",
+        subtitle:"Tips & Triks",
+        },
+        {
+        title:"book now", 
+        icon:"fas fa-bookmark",
+        subtitle:"Special Offers",
+        }
+        ],
+      socialLinks:[{
+        icon:"fab fa-facebook-square",
+        title:"Facebook",
+        },
+        {
+        icon:"fab fa-twitter",
+        title:"Twitter",
+        },
+        {
+        icon:"fab fa-instagram",
+        title:"Instagram",
+        },
+        {
+        icon:"fab fa-youtube",
+        title:"Youtube",
+        }
+        ]
+    }
+  },
 }
+
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 </style>
